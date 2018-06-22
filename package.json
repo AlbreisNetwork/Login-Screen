@@ -1,0 +1,27 @@
+{
+  "name": "login-screen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "firebase": "^5.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-typescript": "^5.0.0-alpha.2",
+    "gulp-vueify": "0.0.3",
+    "typescript": "^2.9.2",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "login",
+    "screen"
+  ],
+  "author": "Albreis Network <albreisdev@gmail.com>",
+  "license": "ISC"
+}

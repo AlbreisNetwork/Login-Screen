@@ -1,0 +1,43 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/><meta href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet"/><link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet"/><script src="https://unpkg.com/vue/dist/vue.js"></script><script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script><script src="https://unpkg.com/vuetify/dist/vuetify.js"></script><script data-main="app.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script><script>// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDur98kOAB_Yg1lm42yD7ZratHUVZ5dpUQ",
+  authDomain: "albreis-network.firebaseapp.com",
+  databaseURL: "https://albreis-network.firebaseio.com",
+  projectId: "albreis-network",
+  storageBucket: "albreis-network.appspot.com",
+  messagingSenderId: "216203408363"
+};
+firebase.initializeApp(config);</script></head><body><div id="app"><v-app><v-content><v-container><header></header><section><v-layout align-center="align-center"><v-flex class="xs12 sm6 offset-sm3"><v-card fill-height="fill-height" style="margin-top:50px;"><v-card-media src="http://site3431.cfn.acsitefactory.com/sites/g/files/awx4371/f/cfn_slideshow/2d78eff8-088b-4be7-98b4-61d6a238e287.png" height="200px"></v-card-media><v-card-title><div class="xs12 flex"><h1>Vuetify Login Panel</h1><v-form v-model="valid"><div><v-text-field v-model="username" placeholder="admin" :rules="usernameRules" label="Nome" required></v-text-field>
+<v-text-field v-model="password" placeholder="admin" :rules="passwordRules" label="Senha" required></v-text-field></div><p>{{message}}</p><v-btn color="primary" @click="login()">Entrar </v-btn></v-form></div></v-card-title></v-card></v-flex></v-layout></section><footer></footer></v-container></v-content></v-app></div><script>new Vue({ 
+  el: '#app',
+  data: function(){
+    return {
+      valid: false,
+      message: '',
+      username: '',
+      usernameRules: [
+        v => !!v || 'Nome de usuário é obrigatório',
+        v => v.length > 3 || 'O nome de usuario precisar ter mais que 3 carateres'
+      ],
+      password: '',
+      passwordRules: [
+        v => !!v || 'A senha é obrigatória',
+        v => v.length > 3 || 'A senha precisa ter no mínimo 3 caracteres'
+      ]
+    }
+  },
+  methods: {
+  login(){
+    app = this;
+    require(['Login'], function(Login){
+      var login = new Login(app.username, app.password);
+      if(login.check()) {
+        app.message = 'Login efetuado com sucesso'
+      }
+      else {
+        app.message = 'Login inválido'
+      }
+    })
+  }
+  }
+})</script></body></html>
